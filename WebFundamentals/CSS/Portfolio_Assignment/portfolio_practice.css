@@ -1,0 +1,131 @@
+* {
+    margin: 0px;
+    padding: 0px; 
+}
+.header_footer {
+    width: 860px; 
+    height: 65px; 
+    background-color: lightgray; 
+    font-weight: bold; 
+}
+#name{ 
+    width: auto;
+    height: 40px; 
+    display: inline-block; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px; 
+    margin-left: 10px; 
+    position: relative;
+    top: 5px; 
+
+}
+#role{
+    width: 300px;
+    height: 40px; 
+    display: inline-block;  
+    padding-left: 250px; 
+    margin-left: 300px; 
+    position: relative;
+    bottom: 20px; 
+}
+#wrapper { 
+    height: 875px;
+    width: 860px; 
+    background-color: purple; 
+    background-size: contain;
+}
+
+#photo {
+    float: left; 
+    height: 265px;
+    width: 400px; 
+    border: 3px solid white; 
+    margin-left: 10px; 
+    margin-top: 10px; 
+}
+
+#about {
+    float: right; 
+    height: 265px; 
+    width: 400px; 
+    background-color: lavenderblush;  
+    color: gray; 
+    border: 3px solid lavenderblush; 
+    margin-top: 10px; 
+    margin-right: 10px; 
+}
+
+#about_text{
+    margin: 5px; 
+}
+
+.content_headers{ 
+    border: 3px solid gray; 
+    height: 30px; 
+    padding-left: 10px; 
+    padding-top: 5px; 
+    background-color: gray; 
+    color: white; 
+    font-weight: bold; 
+}
+
+#highlights {
+    margin-left: -11px; 
+    margin-right: -10px; 
+
+}
+
+
+.columns{
+    height: 550px; 
+    width: 265px; 
+    margin-left: 22px; 
+    float: left; 
+    margin-top: 15px; 
+    background-color: lavenderblush;
+
+}
+
+.content_body{
+    color: gray;
+    background-color: lavenderblush; 
+    padding: 3px; 
+    text-align: left; 
+    font-size: 14px; 
+}
+
+.content_body img{
+    height: 40px; 
+    width: 40px; 
+    padding-top: 5px; 
+    margin: 5px; 
+}
+
+button{
+    width: 200px; 
+    background-color: crimson;
+    color: white; 
+    font-size: 14px; 
+    margin-left: 30px; 
+}
+
+.header_footer p{
+    color: gray; 
+    text-align: center; 
+}
+
+#sub_footer {
+    text-align: center;  
+}
+
+#sub_footer p {
+    font-size: 12px; 
+    text-decoration: underline; 
+    font-style: italic; 
+    display: inline-block; 
+}
+#sub_footer img {
+    width: 20px;
+    height: 20px; 
+    display: inline-block; 
+ }
