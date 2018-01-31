@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JQuery Demo!</title>
+        <link rel="stylesheet" type="text/css" href="jQuery_functions.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('h4').click(function(){
+                    alert('hello'); 
+                }); 
+                $("#hide").click(function(){
+                    $("p").hide();
+                });
+                $("#show").click(function(){
+                    $("p").show();
+                });
+                //SLIDE UP
+                $("#slide_up_button").click(function(){
+                    $("#slide_up_content").slideUp(); 
+                }); 
+                //SLIDE DOWN
+                $("#slide_down_content").hide(); 
+                $("#slide_down_button").click(function(){
+                    $("#slide_down_content").slideDown(); 
+                });
+                //SLIDE TOGGLE
+                $("#slide_toggle_button").click(function(){
+                    $("#slide_toggle_content").slideToggle(); 
+                }); 
+                //TOGGLE
+                $("#Toggle").click(function(){
+                    $("p1").toggle();
+                }); 
+                $("fade_toggle_button").click(function(){
+                    $("fade_toggle1").fadeToggle();
+                    $("fade_toggle2").fadeToggle("slow"); 
+                }); 
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Lesson Demo</h1>
+            <h4>Click me!</h4>
+        <hr>    
+        <h1>Hide and Show Effect</h1>
+            <p>Show Additional Information</p>
+                <button id="hide">Hide</button>
+                <button id="show">Show</button>
+        <hr>
+        <h1>Slide Up</h1>
+            <button id="slide_up_button">Click to Slide Up</button>
+            <div id="slide_up_content">alkjsadf alsdjfasdk alsdkfjasldf asldkfjasdf </div>
+        <h1>Slide Down</h1>
+            <button id="slide_down_button">Click to Slide</button> 
+            <p id="slide_down_content">content to slide</p>
+        <hr>
+        <h1>Slide Toggle</h1>
+            <button id="slide_toggle_button">Click to Slide Toggle!</button>
+            <p id="slide_toggle_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Nam odio leo, mollis vitae purus sed, imperdiet porttitor quam. Morbi tincidunt massa nisi, et finibus sapien iaculis aliquam. 
+                Suspendisse potenti.</p>
+        <hr>
+        <h1>Toggle Effect</h1>
+            <h2>Toggle</h2>
+                <p1>Show Additional Information</p1>
+                <button id="Toggle">Toggle</button>
+            <h2>Fade Toggle</h2>
+                <button id="fade_toggle_button">Toggle</button>
+                <p id="fade_toggle1">Show Additional Information</p>
+                <p id="fade_toggle2">And even more information</p>
+        <hr>
+    </body>
+</html>

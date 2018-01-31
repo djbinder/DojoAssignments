@@ -1,0 +1,176 @@
+*{
+    width: 970px; 
+}
+
+
+#top_section {
+    background-color: grey; 
+    width: 970px; 
+    height: 210px; 
+    border-bottom: 1px solid black; 
+}
+
+    #top_section h1 {
+        color: white;
+        width: 400px; 
+        font-size: 30px; 
+        float: left; 
+        margin-top: 5px;
+        margin-left: 5px;  
+    } 
+
+    #at_symbol {
+        height: 30px;
+        width: 30px; 
+        float: right; 
+        margin-right: 3px; 
+        margin-top: 3px; 
+    }
+
+    #top_section ul {
+        color: gainsboro; 
+        height: 60px; 
+        background-color: darkslategray; 
+        width: 935px; 
+        height: 30px; 
+        float: left; 
+
+    }
+
+        #top_section ul li { 
+            border-right: 1px solid lightgray; 
+            text-align: center; 
+            width: 100px; 
+            font-size: 12px;
+            list-style-type: none; 
+            display: inline-block; 
+            color: white; 
+        }
+
+            #top_section ul li a:link {
+                color: white; 
+            }
+
+#bottom_section {
+    height: 750px; 
+    width: 970px; 
+}
+
+    .notes_links {
+        color: gold; 
+    }
+
+    hr {
+        width: 475px;  
+        border-style: inset;
+        border-width: 1px;
+    }
+
+    #left_side_bar {
+        width: 200px; 
+        height: 720px; 
+        padding-left: 12px; 
+        background-color: darkslategray; 
+        float: left; 
+    }
+
+    .search_arrow_box {
+        margin-top: 10px; 
+        width: 180px; 
+        font-size: 12px; 
+        color: white; 
+    }
+
+        #search_box {
+            width: 120px; 
+        }
+
+        #search_arrow {
+            width: 50px; 
+            background-color: orange; 
+        }
+
+    .all_notes_headers {
+        font-size: 14px; 
+        border: 1px solid gainsboro; 
+    }
+
+    .left_side_header { 
+        color: gainsboro; 
+        width: 180px; 
+        height: 25px;
+        padding-top: 11px;  
+        padding-left: 10px; 
+    }
+
+    .notes_area_text {
+        font-size: 10px; 
+        border: 1px solid gainsboro;
+        color: gainsboro;  
+        width: 180px; 
+        height: 75px; 
+        padding-left: 10px; 
+        padding-top: 5px; 
+        margin-top: -16px; 
+    }
+
+    .notes_area_text a:link {
+        color: gold; 
+    }
+
+    #left_side_bar #middle_text {
+        color: white; 
+        height: 95px; 
+        margin-top: 5px; 
+        font-size: 9px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    }
+
+    #left_side_bar img {
+        width: 190px; 
+    }
+
+#main_content_column {
+    width: 513px; 
+    background-color: grey; 
+    height: 720px; 
+    color: white;  
+    float: left; 
+    padding-left: 20px; 
+} 
+
+    .main_content_header {
+        font-family: 'Times New Roman', Times, serif; 
+        width: 300px; 
+        color: white; 
+    }
+
+    .main_content_text {
+        font-size: 16px; 
+        width: 470px; 
+        font-family: Arial, Helvetica, sans-serif; 
+        margin-top: -10px; 
+    }
+
+#right_content_column {
+    background-color:grey; 
+    width: 220px;
+    height: 720px; 
+    float: right; 
+    padding-left: 5px; 
+}
+
+    .right_side_header {
+        color: white; 
+        width: 75px; 
+        margin-left: 10px; 
+        height: 15px;
+    }
+
+    #right_content_column img {
+        height: 70px;
+        width: 170px;
+        margin-left: 10px; 
+        border: 1px solid white;
+    }
+

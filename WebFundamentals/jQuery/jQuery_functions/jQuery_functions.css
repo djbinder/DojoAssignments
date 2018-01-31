@@ -1,0 +1,11 @@
+#slide_up {
+    border: 3px solid black; 
+}
+
+#slide_up_content {
+    border: 3px solid red; 
+}
+#slide_down_content {
+    height: 300px;
+    border: 3px solid blue; 
+}
