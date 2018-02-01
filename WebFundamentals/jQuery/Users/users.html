@@ -1,0 +1,42 @@
+<!-- THIS LINK HELPED -->
+<!-- https://www.tutorialrepublic.com/faq/how-to-add-remove-table-rows-dynamically-using-jquery.php -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+        <link rel="stylesheet" type="text/css" href="users.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="users.js"></script>
+    </head>
+    <body>
+        <table>
+            <thead> 
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact #</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dan</td>
+                    <td>Binder</td>
+                    <td>email@email.com</td>
+                    <td>345345345345</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <form id="myform" >
+                <h1>Add User</h1>
+                First Name: <input type="text" id="firstname"><br>
+                Last Name: <input type="text" id="lastname"><br>
+                Email Address: <input type="text" id="emailaddress"><br>
+                Contact #: <input type="text" id="contactnumber"><br>
+                <input type="button" class="add_user" value="Add User"> 
+        </form>
+    </body>

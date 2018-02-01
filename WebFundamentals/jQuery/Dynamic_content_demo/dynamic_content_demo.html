@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Dynamic Content Demo</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+            function attach_handlers() {
+                $(".alert").click(function(){
+                    alert("you clicked me!");
+                });
+            }
+            
+            $(document).ready(function() {
+
+                attach_handlers(); 
+
+                // $(".alert").click(function(){
+                //     alert("you clicked me!");
+                // });
+                $(".new_btn").click(function() {
+                    $("#buttons").append("<button class='alert'>I am dynamically generated button!</button>");
+                    attach_handlers(); 
+                });
+                // THE METHOD BELOW IS USING .on()
+                // });
+                // $(document).on("click",".alert",function(){
+                //     alert("you clicked me!");
+                // })
+            });
+        </script>
+    </head>
+    <body>
+        <h3>Static Content</h3>
+        <div>
+            <button class="alert">click me for a message!</button>
+            <button class="alert">click me for a message!</button>
+            <button class="alert">click me for a message!</button>
+            <button class="new_btn">click me to add a new button</button>
+        </div>
+        <h3>Dynamically Rendered Content</h3>
+        <div id="buttons">
+        </div>
+    </body>
