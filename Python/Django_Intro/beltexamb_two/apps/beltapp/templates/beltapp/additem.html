@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--  -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Add Item to Wishlist</title>
+    </head>
+    <!--  -->
+    <body>
+        <!--  -->
+        <h5><a href='http://127.0.0.1:8000'/>Dashboard</a></h5>
+        <h5><a href="/logout">Log Out</a></h5>
+        <h3>{{request.session.myname}}</h3>
+        <h1>Welcome!</h1>
+        <div id="additem">
+            <h1>Add a new item to your wishlist!</h1><br>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/additem" method="POST">
+                {% csrf_token %}
+                Item/Product: <input type="text" name="itemname"><br><br>
+                <input type="submit" name="additem" value="Add"><br><br>
+            </form>
+        </div>
+        <!--  -->    
+        <!--  -->
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+            <title>Ninja Gold</title>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/ninja_gold.css') }}">
+    </head>
+    <body>
+            <h1 class="header">Welcome to the Ninja Gold Game!</h1>
+            <p id="gold_count">Your Gold: {{  data['gold_count']  }} </p>
+            <div id="all_places_div">
+                <div class="places_divs">
+                    <h4 class="places_headers">Farm</h4>
+                    <h5 class="places_sub_headers">(earns 10-20 golds)</h5>
+                    <form class="places_forms" action="/process_money" method="POST">
+                        <input type="hidden" name="location" value="farm">
+                        <input type="submit" value='Find gold!!'>
+                    </form>
+                </div>    
+                <div class="places_divs">
+                    <h4 class="places_headers">Cave </h4>
+                    <h5 class="places_sub_headers">(earns 5-10 golds)</h5>
+                    <form class="places_forms" action="/process_money" method="POST">
+                        <input type="hidden" name="location" value="cave">
+                        <input type="submit" value='Find gold!!'>
+                    </form>
+                </div>  
+                <div class="places_divs">
+                    <h4 class="places_headers">House</h4>
+                    <h5 class="places_sub_headers">(earns 2-5 golds)</h5>
+                    <form class="places_forms" action="/process_money" method="POST">
+                        <input type="hidden" name="location" value="house">
+                        <input type="submit" value='Find gold!!'>
+                    </form>
+                </div>  
+                <div class="places_divs">
+                    <h4 class="places_headers">Casino</h4>
+                    <h5 class="places_sub_headers">(earnsa/takes 0-50 golds)</h5>
+                    <form class="places_forms" action="/process_money" method="POST">
+                        <input type="hidden" name="location" value="casino">
+                        <input type="submit" value='Find gold!!'>
+                    </form>
+                </div>  
+            </div>
+            <h6>Activities:</h6>
+            <div class='log'>
+                {{ data['log'] | safe }}
+            </div>
+    </body>
+</html>

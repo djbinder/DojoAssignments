@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of Making GET Request using Ajax in jQuery</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var LoopPhotos = '';
+    var addPhotos = '';
+    for(var i = 1; i < 152; i++){
+        LoopPhotos = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + i + ".png";
+        addPhotos += '<img src =' + LoopPhotos + '>';
+    } 
+    $("body").append(addPhotos);
+    });
+</script>
+</head>
+<body>
+</body>
+</html>  

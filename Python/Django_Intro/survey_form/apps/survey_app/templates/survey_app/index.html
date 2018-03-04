@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form App</title>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <form action='/survey_app/process' method='post'>
+        {% csrf_token %}
+        <h3>Survey Form App</h3>
+        Your Name:  <input type="text" name="name"><br>
+        Dojo Location:  
+            <select name="location">
+                <option value="chicago">Chicago</option>
+                <option value="nyc">New York City</option>
+                <option value="seattle">Seattle</option>
+            </select><br>
+        Favorite Language:  
+            <select name="language">
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="html">HTML</option>
+            </select><br>
+        Comment (optional):  <textarea name="comment">Add comment here...</textarea><br>
+        <input type="submit" value="Submit Survey">
+    </form>
+</body>
+</html>

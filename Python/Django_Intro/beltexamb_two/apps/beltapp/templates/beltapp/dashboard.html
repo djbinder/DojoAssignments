@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h5><a href="/logout">Log Out</a></h5>
+    <h5><a href='/viewadditem'>Add new item to wish list</a></h5>
+    <p>{{request.session.userid}}</p>
+    <h1>Hello, {{request.session.myname}}</h1>
+     <h4>Your Wish List:</h4>
+    <table>
+        <thead>
+                <th>Item</th>
+                <th>Added by</th>
+                <th>Date Added</th>
+                <th>Action</th>
+        </thead>
+        <tbody>
+        {% for wish in wishes %}
+            <tr>
+                <td><a href='/allwishers/{{wish.id}}'/>{{wish.itemname}}</a></td>
+                <td>{{wish.add_to_list_user.myname}}</td>
+                <td>{{wish.updated_at}}</td>
+                {% if request.session.userid == wish.add_to_list_user.id %}
+                    <td><a href="destroy/{{wish.id}}"/>Delete</a></td>
+                    {% else %}
+                    <td><a href="/removewish/{{wish.id}}"/>Remove from List</a></td>
+                {% endif %}
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table> 
+    <br>
+    <br>
+    <h4>Other Wishlist</h4>
+    <table>
+        <thead>
+            <th>Item</th>
+            <th>Added by</th>
+            <th>Date Added</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+                {% for item in otheritems %}
+            <tr>
+                <td>{{item.itemname}}</td>
+                <td>{{item.add_to_list_user.myname}}</td>
+                <td>{{item.created_at}}</td>
+                <td><a href='addwish/{{item.id}}'>Add Item to Wishlist!</a></td>
+            </tr>
+        </tbody>
+    {% endfor %}
+    </table> 
+    <p><a href='/viewadditem'>Add Item</a></p>
+</body>
+</html>

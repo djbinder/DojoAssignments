@@ -1,0 +1,35 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action='/createcourse' id='createform' method='POST'> 
+    <h1>Add a new course</h1>
+    Course Name: <input type="text", id="coursename" name="coursename"><br>
+    Course Description: <input type="textarea" id="coursedescription" name="coursedescription"><br>
+    <input type='submit' name="createcourse" value="Add">
+    </form>
+    <table>
+        <thead>
+            <th>Course Name</th>
+            <th>Course Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.coursename}}</td>
+                <td>{{course.coursedescription}}</td>
+                <td>{{course.createdat}}</td>
+                <td><a href="{{course.id}}/delete"/>remove</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+</body>
+</html> -->

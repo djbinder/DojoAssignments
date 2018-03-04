@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5><a href="/logout">Log Out</a></h5>
+    <h1>Hello, {{request.session.name}}</h1>
+    <!--  -->
+    <!--  -->
+    <h4>Here are your appointments for today {{today}}</h4>
+    <table>
+        <thead>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>userid</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            {% for appointment in appointmentstoday %}
+            <tr>
+                <td>{{appointment.task}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td>{{appointment.status}}</td>
+                <td>{{appointment.userid}}</td>
+                <td><a href="edit/{{appointment.id}}"/>Edit</a>&nbsp;&nbsp;&nbsp;<a href="{{appointment.id}}/delete"/>Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+        <h4>Your Other appointments</h4>
+    <table>
+        <thead>
+            <th>Tasks</th>
+            <th>Date</th>
+            <th>TIME</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for appointment in appointmentsfuture %}
+            <tr>
+                <td>{{appointment.task}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td>{{appointment.status}}</td>
+            </tr>
+                {% endfor %}
+        </tbody>
+    </table> 
+    <form action='/createappointment' id='createappointment' method='POST'> 
+    {% csrf_token %}
+    <h1>Add Appointment</h1>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    Date: <input type='date'  name='date' value="{{m.birth_date|date:"Y/m/d"}}" required=True><br>
+    Time: <input type="time" id="time" name="time"><br>
+    Tasks: <input type="text" id="task" name="task"><br>
+    <input type='submit' name="createappointment" value="Add">
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Profile Page</title>
+    </head>
+    <body>
+        <h5><a href="/logout">Log Out</a></h5>
+        <h5><a href="/courses">Courses</a></h5>
+        <h1>Welcome!</h1>
+        <h4>Favorite Classes:</h4>
+        <table>
+                <thead>
+                    <th>Course Name</th>
+                    <th>Course Description</th>
+                    <th>Date Added</th>
+                    <th>Remove</th>
+                </thead>
+                <tbody>
+                        {% for favorites in favorites %}
+                        <tr>
+                            <td>{{favorites.coursename}}</td>
+                            <td>{{favorites.description}}</td>
+                            <td>{{favorites.createdat}}</td>
+                            <td><a href="/unfavorite/{{favorites.id}}">Unfavorite</a></td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+        </table> 
+        <br>
+</body>
+</html>

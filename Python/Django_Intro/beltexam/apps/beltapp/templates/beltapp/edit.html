@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5><a href='/'>Dashboard</a></h5>
+    <h5><a href='/logout'>Log Out</a></h5>
+    <form action='/update/{{id}}' method='POST'> 
+    {% csrf_token %}
+    {% if messages %}
+    <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    Tasks: <input type="text" id="task" name="task" value={{task}}><br>
+    Status: 
+        <select name='status'>
+            <!-- <option value={{appointment.status}}>{{status}}</option> -->
+            <option value='Done' name='done' id='done'>Done</option>
+            <option value='Pending' name='pending' id='pending'>Pending</option>
+            <option value='Missed' name='missed' id='missed'>Missed</option>
+        </select><br>
+    Date: <input type="date", id="date" name="date" value={{date|date:"Y-m-d"}}><br>
+    Time: <input type="time" id="time" name="time" value={{time|time:"H:i"}}><br>
+    <input type='submit' name="update" value="Update">
+    <input type="hidden" name="id" id="id" value={{id}}>
+    </form>
+</body>
+</html>

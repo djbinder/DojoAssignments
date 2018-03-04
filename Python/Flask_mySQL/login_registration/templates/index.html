@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+    {% endwith %}
+        <form action='/create' method='POST'>
+            <label for="first_name">First Name: <input type="text" name="first_name" id="first_name"></label><br>
+            <label for="last_name">Last Name:  <input type="text" name="last_name" id="last_name"></label><br>
+            <label for="email">Email: <input type="text" name="email" id="email"></label><br>
+            <label for="password">Password: <input type="password" name="password" id="password"></label><br>
+            <label for="password_confirm">Confirm Passworld: <input type="password" name="password_confirm" id="password_confirm"></label><br>
+            <input type="submit" value="Add">
+            <p class="confirmation">{{  confirmation  }}</p>
+            <p class="error">{{  error  }}</p>
+        </form>
+    </body>
+</html>

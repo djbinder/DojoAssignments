@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dojo_survey.css') }}">
+    </head>
+    <body>
+        <h1>DOJO SURVEY INDEX PAGE</h1>
+        <form action='/result' method='POST'>
+            Name: <input type='text' name='full_name' id='full_name'>
+            <br></br>
+            Location: <select name="location" id="location">
+                <option value="chicago">Chicago</option>
+                <option value="new_york">New York</option>
+                <option value="seattle">Seattle</option>
+            </select>
+            <br></br>
+            Favorite Language: <select language="language" name='language' id='language'>
+                <option value="python">Python</option>
+                <option value="HTML">HTML</option>
+                <option value="JavaScript">JavaScript</option>
+            </select>
+            <br></br>
+            Comment: <textarea name="comments" rows="10" cols="30"></textarea>
+            <br></br>
+            <input type='submit' name='Submit'>
+    </body>
+</html>

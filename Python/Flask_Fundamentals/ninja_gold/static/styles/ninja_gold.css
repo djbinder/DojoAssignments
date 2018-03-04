@@ -1,0 +1,47 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#all_places_div {
+    border: 3px solid red; 
+    width: 100%; 
+}
+
+.places_divs {
+    border: 3px solid black; 
+    text-align: center; 
+    width: 24%; 
+    display: inline-block; 
+}
+
+.places_headers {
+    font-size: 26px; 
+    border: 3px solid green; 
+}
+
+.places_sub_headers {
+    font-size: 16px; 
+    border: 3px solid red; 
+}
+
+.submit_button {
+    font-size: 16px; 
+}
+
+h6 {
+    border: 3px solid purple; 
+}
+
+.log{
+    width: 600px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid silver;
+    overflow: scroll;
+}
+
+.won{
+    padding: 0px; 
+    margin: 0px; 
+    display: block; 
+}

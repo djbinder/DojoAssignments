@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h5><a href="/logout">Log Out</a></h5>
+    <h5><a href="/profile/{{userid}}">View Profile</a></h5>
+    <form action='/createcourse' id='createcourse' method='POST'> 
+    {% csrf_token %}
+    <h1>Add a new course</h1>
+    Course Name: <input type="text", id="name" name="coursename"><br>
+    Course Description: <input type="textarea" id="description" name="description"><br>
+    <input type='submit' name="createcourse" value="Add">
+    </form>
+    <br>
+    <table>
+        <thead>
+            <th>Course Name</th>
+            <th>Course Description</th>
+            <th>Date Added</th>
+            <th>userid</th>
+            <th>userAdded_id</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for course in courses %}
+            <tr>
+                <td>{{course.coursename}}</td>
+                <td>{{course.description}}</td>
+                <td>{{course.createdat}}</td>
+                <td>{{course.userid}}</td>
+                <td>{{course.userAdded_id}}</td>
+                {% if request.session.userid == course.userAdded_id %}
+                    <td><a href="/delete/{{course.id}}"/>Delete</a>&nbsp;&nbsp;&nbsp;<a href="favorite/{{course.id}}"/>Add As A Favorite</a></td>
+                    {% else %}
+                        <td><a href="/favorite/{{course.id}}"/>Add As A Favorite</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+</body>
+</html>

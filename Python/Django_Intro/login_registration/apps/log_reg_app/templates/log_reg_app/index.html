@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--  -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login and Registration</title>
+    </head>
+    <!--  -->
+    <body>
+        <!--  -->
+        <div id="registration_form">
+            <h1>Registration</h1><br>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/create" method="POST">
+                {% csrf_token %}
+                First Name: <input type="text" name="first_name"><br><br>
+                Last Name: <input type="text" name="last_name"><br><br>
+                Email: <input type="email" name="email"><br><br>
+                Password: <input type="password" name="password"><br><br>
+                Confirm Password: <input type="password" name="confirm"><br><br>
+                <input type="submit" name="register" value="Register"><br><br>
+            </form>
+        </div>
+        <!--  -->
+        <div id="login_form">
+            <h1>Log In</h1><br>
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                Email: <input type="email" name="email"><br><br>
+                Password: <input type="password" name="password"><br><br>
+                <input type="submit" name="login" value="Log In"><br><br>
+            </form>
+        </div>      
+        <!--  -->
+    </body>
+</html>
+<!-- <div class='log'>
+    {{request.session.message}}
+</div> -->

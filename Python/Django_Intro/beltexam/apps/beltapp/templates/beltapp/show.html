@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login and Registration</title>
+    </head>
+    <body>
+        <h5><a href="/logout">Log Out</a></h5>
+        <h1>Hello, {{request.session.name}}</h1>
+        <h4>Here are your appointments for today, February 24, 2018:</h4>
+        <table>
+            <thead>
+                <th>Tasks</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for appointment in user.appointment.all %}
+                <tr>
+                    <td>{{appointment.task}}</td>
+                    <td>{{appointment.time}}</td>
+                    <td>{{appointment.date}}</td>
+                    <td>{{appointment.userid}}</td>
+                    <td><a href="{{appointments.id}}/edit"/>Edit  </a><a href="{{appointments.id}}/delete"/>Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+            <h4>Your Other appointments</h4>
+        <table>
+            <thead>
+                <th>Tasks</th>
+                <th>Date</th>
+                <th>Time</th>
+            </thead>
+            <tbody>
+                {% for appointments in appointments %}
+                <tr>
+                    <td>{{appointments.tasks}}</td>
+                    <td>{{appointments.time}}</td>
+                    <td>{{appointments.status}}</td>
+                </tr>
+                    {% endfor %}
+            </tbody>
+        </table> 
+        <form action='/createappointment' id='createappointment' method='POST'> 
+        {% csrf_token %}
+        <h1>Add Appointment</h1>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        Date: <input type="date", id="date" name="date"><br>
+        Time: <input type="time" id="time" name="time"><br>
+        Tasks: <input type="text" id="task" name="task"><br>
+        <input type='submit' name="createtask" value="Add">
+        </form>
+    </body>
+</html>

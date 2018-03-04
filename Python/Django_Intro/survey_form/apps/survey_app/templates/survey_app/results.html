@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form App</title>
+</head>
+<body>
+    <div id = count>
+        <p>Thank you for submitting this form! You have submitted this form {{ request.session.counter }} time(s) now.</p>
+    </div>
+    <div id = info>
+    <h1>Submitted Information</h1>
+    Name: <div class="answers">{{request.session.name}}</div><br>
+    Location: <div class="answers">{{request.session.location}}</div><br>
+    Favorite Language: <div class="answers">{{request.session.language}}</div><br>
+    Comments: <div class="answers">{{request.session.comments}}</div><br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    border: 3px solid black; 
+}
+
+h1 {
+    border: 3px solid red; 
+}
+
+p {
+    border: 3px solid green; 
+    color: red; 
+}
+
+#full_name {
+    border: 3px solid purple; 
+}
+
+#language {
+    border: 3px solid blue; 
+}
+
+div {
+    border: 3px solid goldenrod; 
+}

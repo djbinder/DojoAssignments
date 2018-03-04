@@ -1,0 +1,28 @@
+<html>
+     <head>
+          <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+          <title> Registration Survey </title>
+     </head>
+     <body>
+          <h2> Register</h2>
+          <div id="flashes">
+               <p>{%with messages = get_flashed_messages()%}
+                    {%if messages%}
+                    <ul>
+                         {%for message in messages%}
+                              <li>{{message}}</li>
+                         {%endfor%}
+                    </ul>
+                    {%endif%}
+               {%endwith%}</p>
+          </div>
+               <form action ='/form' method='post'>
+                    <p>First Name:<input class="textfield" type="text" name ="first_name"></p>
+                    <p>Last Name:<input class="textfield" type="text" name ="last_name"></p>
+                    <p>Email:<input class="textfield" type="text" name ="email"></p>
+                    <p>Password:<input class="textfield" type="password" name ="password"></p>
+                    <p>Confirm Password:<input class="textfield" type="password" name ="confirm_pw"></p>
+                    <input type="submit" value="Submit">
+               </form>
+     </body>
+</html>
