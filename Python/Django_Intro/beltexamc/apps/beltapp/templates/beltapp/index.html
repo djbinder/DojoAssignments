@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- ********************HEAD******************** -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login and Registration</title>
+    </head>
+    <!-- ********************BODY******************** -->
+    <body>
+        <h5><a href='http://127.0.0.1:8000'/>Reset Page</a></h5>
+        <h1>Welcome!</h1>
+        <h2>Registration</h2>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <!-- ********************REGISTER******************** -->
+            <form action="/createuser" method="POST">
+                {% csrf_token %}
+                Name: <input type="text" name="name"><br><br>
+                Alias: <input type="text" name="alias"><br><br>
+                Email: <input type='email' name='email'><br><br>
+                Password: <input type="password" name="password"><br><br>
+                Confirm Password: <input type="password" name="confirm"><br>
+                <p>*Password should be at least 8 characters</p>
+                Birthdate: <input type='date'  name='birthdate' value="{{m.birthdate|date:"Y/m/d"}}" required=True><br>
+                <p>*Birthdate should be in MM-DD-YYYY format</p>
+                <input type="submit" name="createuser" value="Register"><br><br>
+            </form>
+            <!-- ********************REGISTER******************** -->
+            <h2>Log In</h2><br>
+            <form action="/login" method="POST">
+                {% csrf_token %}
+                Email: <input type="email" name="email"><br><br>
+                Password: <input type="password" name="password"><br><br>
+                <input type="submit" name="login" value="Log In"><br><br>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+    <h5><a href="/logout">Log Out</a></h5>
+    <h1>Welcome, {{name}}</h1>
+    <div>
+    <h2 style="color:blue;">Quotable Quotes</h2> 
+        <div>
+            {% for quote in otherquotes %}
+            <form action='/addfavorite/{{quote.id}}' method='POST'>
+                {% csrf_token %}
+                <h4>{{quote.author}}</h4>
+                <p>{{quote.quote}}</p>
+                <p>Posted by: <a href='/users/{{quote.created_by.id}}'/>{{quote.created_by.name}}</a></p>
+                <input type = 'submit' name='addfavorite' value='Add to My List'><br>
+            </form><br>
+        </div>
+        {% endfor %}
+        <div>
+        <h2 style="color:blue;">{{name}} - Here are your Favorites</h2> 
+            <div class=rightform>
+                {% for favorite in favorites %}
+                <form action='/removefavorite/{{favorite.id}}' method='POST'>
+                    {% csrf_token %}
+                    <h4>{{favorite.author}}</h4>
+                    <p>{{favorite.quote}}</p>
+                    <p>Posted by: <a href='/users/{{favorite.created_by.id}}'/>{{favorite.created_by.name}}</a></p>
+                    <input type = 'submit' name='removefavorite' value='Remove from my list'><br>
+                </form><br>
+            </div>
+            {% endfor %}
+        </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form action='/addquote' method='POST'>
+            {% csrf_token %}
+            <h3>Contribute a Quote:</h3>
+            Quoted By: <input type='text' name='author'><br><br>
+            Message: <textarea name='quote'></textarea><br>
+            <input type='submit' name='addquote' value='Submit'>
+        </form>
+</body>
+</html>
