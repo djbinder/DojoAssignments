@@ -1,0 +1,508 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red63\green63\blue63;\red0\green0\blue255;
+\red255\green255\blue255;\red101\green76\blue29;\red0\green0\blue109;\red144\green1\blue18;\red157\green0\blue210;
+\red101\green76\blue29;\red0\green0\blue109;\red144\green1\blue18;\red157\green0\blue210;\red63\green63\blue63;
+\red19\green120\blue72;\red15\green112\blue1;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c31373\c31373\c31373;\cssrgb\c0\c0\c100000;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c6275\c50196;\cssrgb\c63922\c8235\c8235;\cssrgb\c68627\c0\c85882;
+\cssrgb\c47451\c36863\c14902;\cssrgb\c0\c6275\c50196;\cssrgb\c63922\c8235\c8235;\cssrgb\c68627\c0\c85882;\cssrgb\c31373\c31373\c31373;
+\cssrgb\c3529\c53333\c35294;\cssrgb\c0\c50196\c0;}
+\margl1440\margr1440\vieww21520\viewh20200\viewkind0
+\deftab720
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0\b\fs48 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+SPORTS OCM #1
+\fs28 \cf3 \
+\
+all baseball leagues
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 name__icontains\cf2 \strokec2 =\cf8 \strokec8 'baseball'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all womens' leagues
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 name__icontains\cf2 \strokec2 =\cf8 \strokec8 'women'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all leagues where sport is any type of hockey\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 sport__icontains\cf2 \strokec2 =\cf8 \strokec8 'hockey'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 \strokec2 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+
+\b all leagues where sport is something OTHER THAN football
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.exclude(\cf7 \strokec7 name__icontains\cf2 \strokec2 =\cf8 \strokec8 "football"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all leagues that call themselves "conferences"
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 name__icontains\cf2 \strokec2 =\cf8 \strokec8 "Conference"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+\
+
+\b all leagues in the Atlantic region
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \outl0\strokewidth0 def\cf2  \cf10 index\cf2 (\cf11 request\cf2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 "leagues"\cf2 : League.objects.filter(\cf11 name__icontains\cf2 =\cf12 'atlantic'\cf2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 'teams'\cf2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 "players"\cf2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf13 return\cf2  render(request, \cf12 "leagues/index.html"\cf2 , context)\
+\
+\
+
+\f0 \cf3 \cb1 \outl0\strokewidth0 \strokec3 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\b \cf3 all teams based in Dallas
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 location__icontains\cf2 \strokec2 =\cf8 \strokec8 'Dallas'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all teams named the Raptors
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 team_name__icontains\cf2 \strokec2 =\cf8 \strokec8 "Raptors"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all teams whose location includes "City"
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 location__icontains\cf2 \strokec2 =\cf8 \strokec8 'city'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all teams whose names begin with "T"
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 team_name__startswith\cf2 \strokec2 =\cf8 \strokec8 "T"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)
+\f0 \cf3 \cb1 \strokec3 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+\cf3 \
+\
+\
+
+\b all teams, ordered alphabetically by location\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \outl0\strokewidth0 def\cf2  \cf10 index\cf2 (\cf11 request\cf2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 "leagues"\cf2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 'teams'\cf2 : Team.objects.order_by(\cf12 '-location'\cf2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf12 "players"\cf2 : Player.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf13 return\cf2  render(request, \cf12 "leagues/index.html"\cf2 , context)
+\f0 \cf3 \cb1 \outl0\strokewidth0 \strokec3 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+\cf3 \
+\
+\
+
+\b all teams, ordered by team name in reverse alphabetical order
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.order_by(\cf8 \strokec8 '-location'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b every player with last name "Cooper"\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 last_name__icontains\cf2 \strokec2 =\cf8 \strokec8 'Cooper'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...every player with first name "Joshua"
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 first_name__icontains\cf2 \strokec2 =\cf8 \strokec8 'Joshua'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b every player with last name "Cooper" EXCEPT those with\'a0"Joshua" as the first name\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 last_name__icontains\cf2 \strokec2 =\cf8 \strokec8 "Cooper"\cf2 \strokec2 ).exclude(\cf7 \strokec7 first_name\cf2 \strokec2 =\cf8 \strokec8 "Joshua"\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b all players with first name "Alexander" OR first name "Wyatt"
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(Q(\cf7 \strokec7 first_name__icontains\cf2 \strokec2 =\cf8 \strokec8 "Alexander"\cf2 \strokec2 ) | Q(\cf7 \strokec7 first_name__icontains\cf2 \strokec2 =\cf8 \strokec8 "Wyatt"\cf2 \strokec2 ))\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\
+\
+\
+\
+\
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0\b\fs48 \cf2 \cb1 \outl0\strokewidth0 SPORTS OCM #2\
+\
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\fs28 \cf3 \outl0\strokewidth0 \strokec3 ...all teams in the Atlantic Soccer Conference
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "teams"\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 league_id\cf2 \strokec2 =\cf15 \strokec15 5\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all (current) players on the Boston Penguins\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "teams"\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 curr_team_id\cf2 \strokec2 =\cf15 \strokec15 28\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0\b \cf3 \strokec3 \
+\
+\
+...all (current) players in the International Collegiate Baseball Conference\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf16 \strokec16 # "leagues": League.objects.all(),\cf2 \cb1 \strokec2 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf16 \strokec16 # "teams": Team.objects.filter(league_id__),\'a0\'a0\'a0\'a0\cf2 \cb1 \strokec2 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 curr_team__league__name\cf2 \strokec2 =\cf8 \strokec8 "International Collegiate Baseball Conference"\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0\b \cf3 \strokec3 \
+
+\b0 \
+
+\b ...all (current) players in the American Conference of Amateur Football with last name "Lopez\'94
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf16 \strokec16 # "leagues": League.objects.all(),\cf2 \cb1 \strokec2 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf16 \strokec16 # "teams": Team.objects.filter(league_id__),\'a0\'a0\'a0\'a0\cf2 \cb1 \strokec2 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 curr_team__league__name\cf2 \strokec2 =\cf8 \strokec8 "American Conference of Amateur Football"\cf2 \strokec2 ).filter(\cf7 \strokec7 last_name\cf2 \strokec2 =\cf8 \strokec8 "Lopez"\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all football players\
+
+\b0 \
+
+\b ...all teams with a (current) player named "Sophia"\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 teams__curr_players__first_name\cf2 \strokec2 =\cf8 \strokec8 'Sophia'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "teams"\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 curr_players__first_name\cf2 \strokec2 =\cf8 \strokec8 "Sophia"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all leagues with a (current) player named "Sophia"\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.filter(\cf7 \strokec7 teams__curr_players__first_name\cf2 \strokec2 =\cf8 \strokec8 'Sophia'\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "teams"\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 curr_players__first_name\cf2 \strokec2 =\cf8 \strokec8 "Sophia"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...everyone with the last name "Flores" who DOESN'T (currently) play for the Washington Roughriders
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 last_name\cf2 \strokec2 =\cf8 \strokec8 'Flores'\cf2 \strokec2 ).exclude(\cf7 \strokec7 curr_team_id\cf2 \strokec2 =\cf15 \strokec15 10\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all teams, past and present, that Samuel Evans has played with\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "teams"\cf2 \strokec2 :Team.objects.filter(\cf7 \strokec7 all_players__first_name\cf2 \strokec2 =\cf8 \strokec8 "Samuel"\cf2 \strokec2 )&Team.objects.filter(\cf7 \strokec7 all_players__last_name\cf2 \strokec2 =\cf8 \strokec8 "Evans"\cf2 \strokec2 ),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all players, past and present, with the Manitoba Tiger-Cats\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 all_teams\cf2 \strokec2 =\cf15 \strokec15 37\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+
+\b ...all players who were formerly (but aren't currently) with the Wichita Vikings
+\b0 \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 all_teams\cf2 \strokec2 =\cf15 \strokec15 40\cf2 \strokec2 ).exclude(\cf7 \strokec7 curr_team\cf2 \strokec2 =\cf15 \strokec15 40\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+
+\b ...every team that Jacob Gray played for before he joined the Oregon Colts\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "leagues"\cf2 \strokec2 : League.objects.all(),\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 'teams'\cf2 \strokec2 : Team.objects.filter(\cf7 \strokec7 all_players__first_name\cf2 \strokec2 =\cf8 \strokec8 "Jacob"\cf2 \strokec2 )&Team.objects.filter(\cf7 \strokec7 all_players__last_name\cf2 \strokec2 =\cf8 \strokec8 "Gray"\cf2 \strokec2 ).exclude(\cf7 \strokec7 team_name\cf2 \strokec2 =\cf8 \strokec8 "Colts"\cf2 \strokec2 ), \cf16 \strokec16 #this is not totally right\cf2 \cb1 \strokec2 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.all()\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+
+\b ...everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1\b0 \cf4 \cb5 \strokec4 def\cf2 \strokec2  \cf6 \strokec6 index\cf2 \strokec2 (\cf7 \strokec7 request\cf2 \strokec2 ):\cb1 \
+\cb5 \'a0\'a0\'a0\'a0context = \{\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf8 \strokec8 "players"\cf2 \strokec2 : Player.objects.filter(\cf7 \strokec7 first_name\cf2 \strokec2 =\cf8 \strokec8 'Joshua'\cf2 \strokec2 )&Player.objects.filter(\cf7 \strokec7 all_teams__league_id\cf2 \strokec2 =\cf15 \strokec15 3\cf2 \strokec2 )\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\}\cb1 \
+\cb5 \'a0\'a0\'a0\'a0\cf9 \strokec9 return\cf2 \strokec2  render(request, \cf8 \strokec8 "leagues/index.html"\cf2 \strokec2 , context)\cb1 \
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\f0 \cf3 \strokec3 \
+\
+\
+...all teams that have had 12 or more players, past and present. (HINT: Look up the Django annotate function.)\
+...all players and count of teams played for, sorted by the number of teams they've played for\
+\pard\tx720\pardeftab720\sl504\partightenfactor0
+
+\b\fs48 \cf2 \outl0\strokewidth0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
